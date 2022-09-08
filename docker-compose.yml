@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  dockerwebapp.server:
+    image: ${DOCKER_REGISTRY-}dockerwebappserver
+    build:
+      context: .
+      dockerfile: dockerWebApp/Server/Dockerfile
+
+  dockerwebapp.client:
+    image: ${DOCKER_REGISTRY-}dockerwebappclient
+    build:
+      context: .
+      dockerfile: dockerWebApp/Client/Dockerfile
+
